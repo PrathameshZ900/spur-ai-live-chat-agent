@@ -19,7 +19,7 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/chat/message", {
+      const res = await axios.post("https://spur-ai-live-chat-agent.onrender.com/chat/message", {
         message: input,
         sessionId,
       });

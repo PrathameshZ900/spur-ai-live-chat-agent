@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
  "scripts": {
-  "build": "prisma generate && tsc",
+  "build": "npx prisma generate && tsc",
   "start": "node dist/server.js",
   "dev": "ts-node-dev --respawn --transpile-only src/server.ts"
 },
@@ -16,10 +16,10 @@
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "groq-sdk": "^0.37.0",
-    "prisma": "^6.19.2"
+    "groq-sdk": "^0.37.0"
   },
   "devDependencies": {
+    "prisma": "^6.19.2",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "ts-node-dev": "^2.0.0",

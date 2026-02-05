@@ -1,4 +1,5 @@
 import Groq from "groq-sdk";
+import { ChatCompletionMessageParam } from "groq-sdk/resources/chat/completions";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -70,11 +71,11 @@ Support hours:
 `;
 
     // 📝 Build conversation messages
-    const messages = [
+    const messages: ChatCompletionMessageParam[] = [
       { role: "system", content: systemPrompt },
 
       // Past conversation history
-      ...history.map((msg) => ({
+      ...history.map((msg): ChatCompletionMessageParam => ({
         role: msg.sender === "user" ? "user" : "assistant",
         content: msg.text,
       })),
